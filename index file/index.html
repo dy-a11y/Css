@@ -1,0 +1,170 @@
+<style>
+    .red{
+        color:red;
+    }
+    .blue{
+        color:blue;
+    }
+    .green{
+        color:green;
+    }
+</style>
+<h1 class="red">클래스 선택자</h1>
+<p class="blue">class 속성값으로 선택자를 지정합니다.</p>
+<p class="green">class 속성은 id 속성과 다르게 속성값을 중복해서 사용할 수 있습니다.</p>
+
+<form>
+    <fieldset>
+        <style>
+            a[href]{
+                color:red;
+            }
+        </style>
+        <a href="#">기본 a 태그</a>
+        <a href="#" target="_blank">새 창으로 열리는 a 태그</a>
+    </fieldset>
+</form>
+<form>
+    <fieldset>
+        <style>
+            a[title="기본"]{
+                color:blue;
+            }
+            a[target="_blank"]{
+                color:green;
+            }
+        </style>
+        <a href="#" target="_blank">기본 a 태그</a>
+        <a href="#" title="기본">새창으로 열리는 a 태그</a>
+    </fieldset>
+</form>
+
+<!--자식 선택자-->
+
+<style>
+    .box > p {
+        color:yellow;
+    }
+    .hi{
+        color:blue;
+        p{
+            color:green;
+        }
+    }
+</style>
+<h1 class="box">1번
+    <p>no1</p>
+</h1>
+<h2 class="hi">2번
+    <p>no2</p>
+</h2>
+
+<!--형제 선택자-->
+
+<form>
+    <fieldset>
+        <style>
+            div ol{
+                color:red;
+            }
+        </style>
+        <div>
+            <p>lorem 1</p>
+            <ul>
+                <li>
+                    <p>lorem 2</p>
+                </li>
+                <li>
+                    <p>lorem 3</p>
+                </li>
+            </ul>
+            <ol>
+                <li>
+                    <p>lorem 5</p>
+                </li>
+            </ol>
+        </div>
+        <p>lorem 4</p>
+    </fieldset>
+</form>
+
+<!--가상요소 선택자-->
+<form>
+    <fieldset>
+        <style>
+            style + p::before{
+                content:'[b]';
+                color:red;
+            }
+            style + p::after{
+                content:'[a]';
+            }
+        </style>
+        <p>Lorem, ipsum dolor.</p>
+    </fieldset>
+</form>
+
+<!--가상클래스 링크 선택자-->
+<form>
+    <fieldset>
+        <style>
+            a:link{/*방문한적 없는 링크*/
+                color:red;
+            }
+            a:visited{/*방문한적 있는 링크*/
+                color:green;
+            }
+        </style>
+    </fieldset>
+</form>
+
+<!--가상클래스 동적 선택자-->
+<form>
+    <fieldset>
+        <style>
+            p:hover{
+                color:red;
+            }
+            button:active{
+                color:green;
+            }
+            input:focus{
+                color:red;
+            }
+            input:checked + label{
+                color:red;
+            }
+            input:disabled, button:disabled{
+                background-color:#ccc;
+            }
+        </style>
+        <input type="text" disabled>
+        <button disabled>버튼</button><br>
+        <input type="checkbox">
+        <label>라벨</label>
+    </fieldset>
+</form>
+
+<!--가상클래크 구조적 선택자-->
+<form>
+    <fieldset>
+        <head>
+            <style>
+                p:nth-child(1){
+                    color:purple;
+                }
+            </style>
+        </head>
+        <body>
+            <p>lorem 0</p>
+            <div>
+                <p>lorem 1</p>
+                <p>lorem 2</p>
+            </div>
+            <div>
+                <p>lorem 3</p>
+                <p>lorem 4</p>
+            </div>
+        </body>
+    </fieldset>
+</form>
