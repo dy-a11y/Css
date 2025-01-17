@@ -92,15 +92,15 @@
 <form>
     <fieldset>
         <style>
-            style + p::before{
+            p1::before{
                 content:'[b]';
                 color:red;
             }
-            style + p::after{
+            p1::after{
                 content:'[a]';
             }
         </style>
-        <p>Lorem, ipsum dolor.</p>
+        <p1>Lorem, ipsum dolor.</p1>
     </fieldset>
 </form>
 
@@ -134,11 +134,11 @@
             input:checked + label{
                 color:red;
             }
-            input:disabled, button:disabled{
+            input:enabled, button:enabled{
                 background-color:#ccc;
             }
         </style>
-        <input type="text" disabled>
+        <input type="text">
         <button disabled>버튼</button><br>
         <input type="checkbox">
         <label>라벨</label>
@@ -164,6 +164,28 @@
             <div>
                 <p>lorem 3</p>
                 <p>lorem 4</p>
+            </div>
+        </body>
+    </fieldset>
+</form>
+
+<form>
+    <fieldset>
+        <head>
+            <style>
+                p{
+                    color:blue;
+                }
+                #main #sub .title{
+                    color:red;
+                }
+            </style>
+        </head>
+        <body>
+            <div id="main">
+                <dive id="sub">
+                    <p class="title" style="color:green;">important</p>
+                </dive>
             </div>
         </body>
     </fieldset>
