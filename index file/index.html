@@ -193,9 +193,14 @@
 <form>
     <fieldset>
         <head>
+            <script src="script.js"></script>
             <body>
                 <script>
-                    document.wirte("내부 스크립트 방법")
+                    document.write("내부 스크립트 방법");
+                </script><br>
+                <button type="button" id="external">버튼을 클릭하세요!</button>
+                <script>
+                    welcomeMessage();
                 </script>
             </body>
         </head>
